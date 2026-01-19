@@ -153,13 +153,18 @@ body.amber-theme .controls button:hover {
   color: #ff5555;
 }
 
+dl {
+  margin: 0;
+}
+
 dl dt {
   color: #00ff88;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 dl dd {
   margin-left: 20px;
+  margin-bottom: 4px;
   color: #aaa;
 }
 

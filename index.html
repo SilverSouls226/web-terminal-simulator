@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Web Terminal</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-
-        <div id="terminal">
-            This is a web temrinal simulator that supports some basic commands. Type "help" for more information.
-            <div id="output"></div>
-
-            <div id="input-line">
-                <span class="prompt">user $</span>
-                <input id="command-input" type="text" autocomplete="off" autofocus />
-            </div>
-        </div>
-
-        <script src="terminal.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Web Terminal Simulator</title>
+</head>
+<frameset rows="50,*,40" border="0">
+    <frame src="header.html" name="header" scrolling="no" noresize>
+    <frameset cols="75%,25%">
+        <frame src="terminal.html" name="terminal">
+        <frame src="sidebar.html" name="sidebar">
+    </frameset>
+    <frame src="footer.html" name="footer" scrolling="no" noresize>
+</frameset>
 </html>

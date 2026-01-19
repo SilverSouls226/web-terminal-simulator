@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            height: 100vh;
+            display: flex; /* Override grid from style.css */
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #terminal {
+            border: none;
+            height: 100%;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    
+    <main id="terminal">
+        <article id="welcome-message">
+            This is a web terminal simulator that supports some basic commands. Type "help" for more information.
+        </article>
+        <div id="output"></div>
+
+        <div id="input-line">
+            <span class="prompt">user $</span>
+            <input id="command-input" type="text" autocomplete="off" autofocus />
+        </div>
+    </main>
+
+    <script src="terminal.js"></script>
+</body>
+</html>

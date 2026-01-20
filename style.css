@@ -273,3 +273,36 @@ footer {
   font-family: inherit;
   font-size: 1em;
 }
+
+/* Progress Bars */
+.stat-item {
+  margin-bottom: 12px;
+}
+
+.stat-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 0.9em;
+}
+
+.progress-container {
+  height: 12px;
+  border: 1px solid #00ff88;
+  padding: 1px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #00ff88;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+body.amber-theme .progress-container {
+  border-color: #ffb000;
+}
+
+body.amber-theme .progress-bar {
+  background-color: #ffb000;
+}

@@ -21,11 +21,26 @@
 <body>
     <aside id="sidebar">
         <h3>System Info</h3>
-        <ul>
-            <li><strong>CPU Usage:</strong> 12%</li>
-            <li><strong>Memory:</strong> 450MB / 16GB</li>
-            <li><strong>Disk:</strong> 80% free</li>
-        </ul>
+        <div id="system-stats">
+            <div class="stat-item">
+                <div class="stat-label"><strong>CPU Usage:</strong> 12%</div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 12%"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label"><strong>Memory:</strong> 450MB / 16GB</div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 2.7%"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label"><strong>Disk:</strong> 80% free</div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 20%"></div>
+                </div>
+            </div>
+        </div>
         <hr>
         <h3>Quick Commands</h3>
         <ul>

@@ -24,23 +24,19 @@
             align-items: center;
             justify-content: space-between;
         }
-
         #logo-container {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         #terminal-logo {
             border: 1px solid #00ff88;
         }
-
         #logo-text {
             font-size: 1.5em;
             font-weight: bold;
             letter-spacing: 2px;
         }
-
         marquee {
             flex: 1;
             margin-left: 20px;
@@ -50,7 +46,6 @@
             padding: 4px 10px;
             background: #000;
         }
-
         #top-nav {
             margin: 0 20px;
             display: flex;
@@ -58,23 +53,19 @@
             align-items: center;
             flex: 1;
         }
-
         .nav-group a {
             color: #00ff88;
             text-decoration: none;
             margin-right: 15px;
             font-size: 0.9em;
         }
-
         .nav-group a:hover {
             text-decoration: underline;
         }
-
         .controls {
             display: flex;
             gap: 10px;
         }
-
         .controls button {
             background: #222;
             color: #00ff88;
@@ -83,7 +74,6 @@
             cursor: pointer;
             font-family: inherit;
         }
-
         .controls button:hover {
             background: #00ff88;
             color: #000;
@@ -104,33 +94,46 @@
                 <a href="#">Help</a>
             </div>
             <div class="controls">
-                <button id="increase-font">A+</button>
-                <button id="decrease-font">A-</button>
+                <button id="btn-increase">A+</button>
+                <button id="btn-decrease">A-</button>
             </div>
         </nav>
         <marquee behavior="scroll" direction="left">System Booting... Welcome to Web Terminal Simulator v1.0.0... Initializing kernel...</marquee>
     </header>
 
     <script>
-        // Font controls
-        let fontSize = 16;
-        function updateFont(size) {
-            const frames = parent.frames;
+        const btnIncrease = document.getElementById('btn-increase');
+        const btnDecrease = document.getElementById('btn-decrease');
+        
+        let currentPercentage = 100;
+
+        function broadcastFontSize(percentage) {
+            const frames = top.frames;
             for (let i = 0; i < frames.length; i++) {
-                try {
-                    frames[i].document.body.style.fontSize = size + "px";
-                } catch(e) {}
+                frames[i].postMessage({
+                    type: 'CHANGE_FONT_SIZE',
+                    percentage: percentage
+                }, '*');
             }
         }
 
-        document.getElementById("increase-font").addEventListener("click", () => {
-            fontSize += 2;
-            updateFont(fontSize);
+        btnIncrease.addEventListener('click', () => {
+            currentPercentage += 10;
+            broadcastFontSize(currentPercentage);
         });
 
-        document.getElementById("decrease-font").addEventListener("click", () => {
-            fontSize = Math.max(10, fontSize - 2);
-            updateFont(fontSize);
+        btnDecrease.addEventListener('click', () => {
+            currentPercentage = Math.max(50, currentPercentage - 10);
+            broadcastFontSize(currentPercentage);
+        });
+
+        // Listen for the message as well (so header updates itself)
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'CHANGE_FONT_SIZE') {
+                document.documentElement.style.fontSize = event.data.percentage + '%';
+                // Sync local state if message came from elsewhere (though here it comes from self)
+                currentPercentage = event.data.percentage; 
+            }
         });
     </script>
 </body>

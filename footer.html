@@ -13,23 +13,30 @@
              height: 100%;
              display: flex;
              flex-direction: row;
-        }
-        footer {
-            border: none;
-            width: 100%;
-            padding: 5px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8em;
-            color: #00ff88;
-        }
-    </style>
-</head>
-<body>
-    <footer>
-        <span>&copy; 2026 Web Sys &bull; Terminal v1.0.0</span>
-        <span>Status: Connected &nbsp; | &nbsp; IP: 127.0.0.1</span>
-    </footer>
-</body>
-</html>
+                }
+                footer {
+                    border: none;
+                    width: 100%;
+                    padding: 5px 16px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 0.8em;
+                    color: #00ff88;
+                }
+            </style>
+        </head>
+        <body>
+            <footer>
+                        <span>&copy; 2026 Web Sys &bull; Terminal v1.0.0</span>
+                        <span>Status: Connected &nbsp; | &nbsp; IP: 127.0.0.1</span>
+                    </footer>
+                    <script>
+                        window.addEventListener('message', (event) => {
+                            if (event.data && event.data.type === 'CHANGE_FONT_SIZE') {
+                                document.documentElement.style.fontSize = event.data.percentage + '%';
+                            }
+                        });
+                    </script>
+                </body>
+                </html>

@@ -96,5 +96,12 @@
             <li><code>clear</code></li>
         </ul>
     </aside>
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'CHANGE_FONT_SIZE') {
+                document.documentElement.style.fontSize = event.data.percentage + '%';
+            }
+        });
+    </script>
 </body>
 </html>

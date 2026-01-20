@@ -35,40 +35,7 @@
             margin-top: 10px;
             color: #888;
         }
-        .command-response {
-            margin-bottom: 15px;
-            padding-left: 10px;
-        }
-        .error {
-            color: #ff5555;
-        }
-        dl { margin: 0; }
-        dl dt { color: #00ff88; margin-top: 4px; }
-        dl dd { margin-left: 20px; margin-bottom: 4px; color: #aaa; }
-        
-        .ls-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .ls-list li {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .blog-post {
-            background: #111;
-            border: 1px solid #333;
-            padding: 15px;
-            border-radius: 5px;
-            max-width: 600px;
-        }
-        .blog-post h3 { margin-top: 0; color: #00ff88; }
-        .blog-post small { color: #666; }
-        .blog-post section { margin-top: 10px; line-height: 1.4; }
-        
+
         #output { white-space: pre-wrap; }
         #input-line { display: flex; align-items: center; }
         .prompt { margin-right: 4px; }
@@ -92,15 +59,19 @@
         </article>
         <div id="output"></div>
 
-                <div id="input-line">
-
-                    <span class="prompt">user$</span>
-
-                    <input id="command-input" type="text" autocomplete="off" autofocus />
-
-                </div>
+        <div id="input-line">
+            <span class="prompt">user$</span>
+            <input id="command-input" type="text" autocomplete="off" autofocus />
+        </div>
     </main>
 
     <script src="terminal.js"></script>
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'CHANGE_FONT_SIZE') {
+                document.documentElement.style.fontSize = event.data.percentage + '%';
+            }
+        });
+    </script>
 </body>
 </html>

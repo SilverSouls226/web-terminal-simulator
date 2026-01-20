@@ -10,17 +10,88 @@
             overflow: hidden;
             background: #111;
             border-bottom: 1px solid #00ff88;
-        }
-        /* Overwrite generic body style from style.css since this is a frame */
-        body {
              height: 100%;
              display: flex;
              flex-direction: row;
         }
+
+        header {
+            width: 100%;
+            border: none;
+            background: #111;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #terminal-logo {
+            border: 1px solid #00ff88;
+        }
+
+        #logo-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        marquee {
+            flex: 1;
+            margin-left: 20px;
+            color: #00ff88;
+            font-weight: bold;
+            border: 1px solid #00ff88;
+            padding: 4px 10px;
+            background: #000;
+        }
+
+        #top-nav {
+            margin: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
+        }
+
+        .nav-group a {
+            color: #00ff88;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+
+        .nav-group a:hover {
+            text-decoration: underline;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .controls button {
+            background: #222;
+            color: #00ff88;
+            border: 1px solid #00ff88;
+            padding: 2px 8px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .controls button:hover {
+            background: #00ff88;
+            color: #000;
+        }
     </style>
 </head>
 <body>
-    <header style="width: 100%; border: none;">
+    <header>
         <div id="logo-container">
             <img src="logo.png" alt="Web Terminal Logo" id="terminal-logo" height="30">
             <span id="logo-text">Web Terminal</span>

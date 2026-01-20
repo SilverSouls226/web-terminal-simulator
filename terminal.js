@@ -98,7 +98,7 @@ function drawMatrix() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = document.body.classList.contains("amber-theme") ? "#FFD700" : "#00FF00";
+  ctx.fillStyle = "#00FF00";
   ctx.font = fontSizeMatrix + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {

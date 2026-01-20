@@ -35,23 +35,12 @@
             <div class="controls">
                 <button id="increase-font">A+</button>
                 <button id="decrease-font">A-</button>
-                <button id="theme-toggle">Toggle Theme</button>
             </div>
         </nav>
         <marquee behavior="scroll" direction="left">System Booting... Welcome to Web Terminal Simulator v1.0.0... Initializing kernel...</marquee>
     </header>
 
     <script>
-        // Simple script to handle theme toggling across frames
-        document.getElementById("theme-toggle").addEventListener("click", () => {
-            const frames = parent.frames;
-            for (let i = 0; i < frames.length; i++) {
-                try {
-                    frames[i].document.body.classList.toggle("amber-theme");
-                } catch(e) { console.error(e); }
-            }
-        });
-
         // Font controls
         let fontSize = 16;
         function updateFont(size) {

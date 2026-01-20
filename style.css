@@ -54,6 +54,9 @@ marquee {
   margin-left: 20px;
   color: #00ff88;
   font-weight: bold;
+  border: 1px solid #00ff88;
+  padding: 4px 10px;
+  background: #000;
 }
 
 #top-nav {
@@ -91,37 +94,6 @@ marquee {
 
 .controls button:hover {
   background: #00ff88;
-  color: #000;
-}
-
-/* Theme classes */
-body.amber-theme {
-  color: #ffb000;
-}
-body.amber-theme #logo-text,
-body.amber-theme marquee,
-body.amber-theme footer,
-body.amber-theme .nav-group a,
-body.amber-theme #sidebar,
-body.amber-theme #sidebar h3,
-body.amber-theme hr,
-body.amber-theme .controls button,
-body.amber-theme dl dt,
-body.amber-theme .blog-post h3 {
-  color: #ffb000;
-  border-color: #ffb000;
-}
-body.amber-theme header {
-  border-bottom-color: #ffb000;
-}
-body.amber-theme footer {
-  border-top-color: #ffb000;
-}
-body.amber-theme #sidebar {
-  border-left-color: #ffb000;
-}
-body.amber-theme .controls button:hover {
-  background: #ffb000;
   color: #000;
 }
 
@@ -299,10 +271,3 @@ footer {
   transition: width 0.5s ease;
 }
 
-body.amber-theme .progress-container {
-  border-color: #ffb000;
-}
-
-body.amber-theme .progress-bar {
-  background-color: #ffb000;
-}
